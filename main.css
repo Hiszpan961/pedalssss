@@ -92,6 +92,32 @@ body{
     color: transparent;
   }
 
+@media screen and (max-width: 1200px) {
+  .content {
+    height: 450px;
+    width: 350px;
+  }
+
+  .links {  
+    padding: 10px 100px;
+    border-radius: 8px;
+    width: 100px;
+    left: 50%;
+    margin-left: 25px;
+  }
+
+  .bannerImg {
+    object-fit: cover;
+    width: 350px;
+  }
+
+  .avatarImg {
+    margin-top: -80px;
+    margin-left: 83px;
+  }
+
+}
+
 
   
 
