@@ -99,9 +99,10 @@ body{
   }
 
   .links {  
-    padding: 10px 100px;
+    padding-left: 10px;
+    padding: 10px 10px;
     border-radius: 8px;
-    width: 100px;
+    width: 280px;
     left: 50%;
     margin-left: 25px;
   }
