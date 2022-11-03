@@ -18,7 +18,7 @@ body{
      }
 
 .content {
-    height: 400px;
+    height: 420px;
     width: 500px;
     border-radius: 25px;
     background-color: #0d0d10;
@@ -94,7 +94,7 @@ body{
 
 @media screen and (max-width: 1200px) {
   .content {
-    height: 450px;
+    height: 430px;
     width: 350px;
   }
 
