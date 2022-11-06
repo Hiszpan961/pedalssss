@@ -65,6 +65,7 @@ body{
   }
 
   .links i {
+    transition: 800ms;
     color: #b3b2c5;
   }
 
