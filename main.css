@@ -18,7 +18,7 @@ body{
      }
 
 .content {
-    height: 420px;
+    height: 400px;
     width: 500px;
     border-radius: 25px;
     background-color: #0d0d10;
@@ -38,16 +38,19 @@ body{
     height: 150px;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
-    filter: brightness(70%);
+    filter: brightness(50%);
   }
 
-  .avatarImg {
-    width: 180px;
-    height: 180px;
-    filter: brightness(90%);
+  .avatarImg {  
+    border-radius: 100px;
+    border: 10px solid;
+    border-color: transparent;
+    width: 150px;
+    height: 150px;
+    filter: brightness(80%);
     border-radius: 50%;
     margin-top: -80px;
-    margin-left: 157px;
+    margin-left: 165px;
   }
 
   .user p {
@@ -58,14 +61,13 @@ body{
   }
 
   .user1 p {
-    color: rgba(220,217,255,.466);
     text-align: center;
     font-size: 15px;
     margin-top: -20px;
   }
 
   .links i {
-    transition: 800ms;
+    transition: 300ms;
     color: #b3b2c5;
   }
 
@@ -82,10 +84,10 @@ body{
     background-color: #131318;
     padding: 10px 100px;
     border-radius: 8px;
+    height: 30px;
     width: 250px;
     left: 50%;
     margin-left: 25px;
-
   }
 
   .links a {
@@ -93,9 +95,16 @@ body{
     color: transparent;
   }
 
+  .e404 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+
+
 @media screen and (max-width: 1200px) {
   .content {
-    height: 430px;
+    height: 400px;
     width: 350px;
   }
 
@@ -103,6 +112,7 @@ body{
     padding-left: 10px;
     padding: 10px 10px;
     border-radius: 8px;
+    height: 30px;
     width: 280px;
     left: 50%;
     margin-left: 25px;
@@ -115,7 +125,7 @@ body{
 
   .avatarImg {
     margin-top: -80px;
-    margin-left: 83px;
+    margin-left: 90px;
   }
 
 }
