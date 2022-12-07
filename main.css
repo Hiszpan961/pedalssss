@@ -23,9 +23,9 @@ body{
     border-radius: 25px;
     background-color: #0d0d10;
     position: absolute;
-    -webkit-box-shadow: 8px 8px 100px 11px rgba(13, 13, 16, 1);
+    /*-webkit-box-shadow: 8px 8px 100px 11px rgba(13, 13, 16, 1);
     -moz-box-shadow: 8px 8px 100px 11px rgba(13, 13, 16, 1);
-    box-shadow: 8px 8px 100px 11px rgba(13, 13, 16, 1);
+    box-shadow: 8px 8px 100px 11px rgba(13, 13, 16, 1);*/
     left: 50%;
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
