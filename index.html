@@ -1,7 +1,7 @@
-<html lang="en">
-
+<!DOCTYPE html>
+<html>
 <head>
-    <title>neksio.wtf</title>
+    <title>&lrm;</title>
     <meta content="neksio.wtf" property="og:title" />
     <link rel="icon" type="image/gif" href="https://cdn.neksio.wtf/avatar.png">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -14,11 +14,246 @@
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="fontawesome.css">
     <script src='fontawesome.js'></script>
-    <script async src='/cdn-cgi/challenge-platform/h/g/scripts/invisible.js?ts=1647183600'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.8/typed.min.js"></script>
+    <style>
+        
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+@font-face {
+    font-family: c;
+    src: url(n.otf);
+}
+@font-face {
+    font-family: n1;
+    src: url(n1.otf);
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    font-family: monospace;
+    background: #111;
+}
+
+#overlay-toggle {
+    display: none
+}
+
+.debold {
+    font-weight: 400
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.overlay {
+    z-index: 1;
+    background-color: #000
+}
+
+.overlay label {
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 100vw;
+    color: #fff;
+    font-size: 2rem
+}
+
+.no-hover {
+    display: block
+}
+
+.hover {
+    display: none
+}
+
+.fullscreen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 100vh;
+    min-width: 100vw
+}
+
+.text-content {
+    background: transparent;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    color: #fff
+}
+
+.hover {
+    font-size: 1.2em!important;
+    text-decoration:none; 
+    color: #bababa; 
+    text-shadow: 0 0 0.40em #bababa; 
+    transition: 0.2s; 
+    opacity: 0.45;
+}
+
+.hover:hover {
+    color: #bababa; 
+
+}
+
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.hero-text {
+    font-size: 10px;
+    font-weight: 400;
+    color: hsl(30, 50%, 98%);
+    text-align: center;
+    margin: 0;
+}
+
+.text-content span {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.text-content p {
+    padding-top: 30px;
+    padding-right: 10px;
+    padding-bottom: 31px;
+    padding-left: 10px;
+    font-size: 1.7rem;
+    font-weight: 500;
+    line-height: 0;
+    color: silver;
+    display: flex
+}
+
+.smaller {
+    font-family: c;
+    font-weight: 100;
+}
+
+.copyrightNote {
+    font-family: monospace;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 900px;
+    text-align: center;
+    color: #ffffff;
+    opacity: 0.45;
+    text-shadow: 0 0 0.40em #ffffff;
+}
+
+@media screen and (max-width: 1200px) {
+    .copyrightNote {
+        margin-top: 775px;
+    }
+}
+
+.overlay span {
+    color: #ffffff;
+    font-size: 0.6em!important;
+}
+
+.overlay span:hover {
+    color: #ffffff;
+    text-shadow: 0 0 0.40em #ffffff;
+    cursor: pointer;
+}
+
+.text-content a {
+    padding-top: 30px;
+    padding-right: 10px;
+    padding-bottom: 31px;
+    padding-left: 10px;
+    font-size: 1.3rem;
+    line-height: 0;
+    color: #ccc;
+    display: flex
+}
+
+.bg {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200vh;
+    background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+    background-repeat: repeat;
+    animation: bg-animation .2s infinite;
+    opacity: .9;
+    visibility: visible;
+  }
+  
+  @keyframes bg-animation {
+      0% { transform: translate(0,0) }
+      10% { transform: translate(-5%,-5%) }
+      20% { transform: translate(-10%,5%) }
+      30% { transform: translate(5%,-10%) }
+      40% { transform: translate(-5%,15%) }
+      50% { transform: translate(-10%,5%) }
+      60% { transform: translate(15%,0) }
+      70% { transform: translate(0,10%) }
+      80% { transform: translate(-15%,0) }
+      90% { transform: translate(10%,5%) }
+      100% { transform: translate(5%,0) }
+  }
+
+#overlay-toggle:checked~.overlay {
+    animation-fill-mode: forwards;
+    animation-name: fade, hide;
+    animation-delay: 0s, 600ms;
+    animation-duration: 600ms, 1ms
+}
+
+#overlay-toggle:checked~.overlay label {
+    animation-fill-mode: forwards;
+    animation-name: fade;
+    animation-delay: 0s;
+    animation-duration: 500ms
+}
+
+@media(hover:hover) {
+    .hover {
+        display: block
+    }
+
+    .no-hover {
+        display: none
+    }
+}
+
+@keyframes fade {
+    to {
+        opacity: 0
+    }
+}
+
+@keyframes hide {
+    to {
+        visibility: hidden
+    }
+}
+
+    </style>
 </head>
 
 <body>
     <main>
+        <div class="bg"></div>
         <script>
             function audioPlay() {
                 var audio = document.getElementById("audio");
@@ -34,16 +269,19 @@
                 <span class="hover" style="font-size: 0.6em;">click to enter</span>
             </label>
         </div>
-        <div class="bg"></div>
         <audio loop="" preload="auto" id="audio">
-            <source src="bg.mp4" type="audio/mp3">
+            <source src="audio.mp3" type="audio/mp3">
         </audio>
         <section class="fullscreen text-content">
-            <h1 style="font-family: n1; text-shadow: 0 0 0.40em #bababa;">neksio <span class="smaller">/'neksɪəʊ/ noun.</span></h1>
+            <span style="font-family: n1; text-shadow: 0 0 0.40em #bababa;">neksio <span class="smaller">/'neksɪəʊ/ noun.</span></span>
             <div class="socials">
-                <a class="hoverr" href="https://t.me/neksioo" target="_blank">telegram</a>
-                <a class="hoverr" href="https://steamcommunity.com/id/ecud" target="_blank">steam</a>
+                <a class="hover" href="https://t.me/neksioo" target="_blank">telegram</a>
+                <a class="hover" href="https://steamcommunity.com/id/ecud" target="_blank">steam</a>
+                <a class="hover" href="https://discord.dog/1085270946211963001" target="_blank">discord</a>
             </div>
+            <div class="clock">
+                <div class="display">
+          </div>
     </main>
     <p class="copyrightNote">© 2023 neksio</p>
 <script>
@@ -118,7 +356,64 @@ const next = () => {
 
 next();
 </script>
+<script>
+    setInterval(function(){
+      const clock = document.querySelector(".display");
+      let time = new Date();
+      let sec = time.getSeconds();
+      let min = time.getMinutes();
+      let hr = time.getHours();
+      let day = 'AM';
+      if(hr > 12){
+        day = 'PM';
+        hr = hr - 12;
+      }
+      if(hr == 0){
+        hr = 12;
+      }
+      if(sec < 10){
+        sec = '0' + sec;
+      }
+      if(min < 10){
+        min = '0' + min;
+      }
+      if(hr < 10){
+        hr = '0' + hr;
+      }
+      clock.textContent = hr + ':' + min + ':' + sec + " " + day;
+    });
+  </script>
+  <script>
+    //written by chatgbt lol
+const titles = [
+  '‎',
+  'g',
+  'ga',
+  'gam',
+  'game',
+  'games',
+  'gamese',
+  'gamesen',
+  'gamesens',
+  'gamesense',
+  'gamesense',
+  'gamesens',
+  'gamesen',
+  'gamese',
+  'games',
+  'game',
+  'gam',
+  'ga',
+  'g'
+];
+
+let index = 0;
+document.title = titles[index];
+
+setInterval(() => {
+  index = (index + 1) % titles.length;
+  document.title = titles[index];
+}, 500); 
+  </script>
 </body>
-
-
 </html>
