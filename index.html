@@ -12,6 +12,8 @@
     <meta property="og:title" content="neksio">
     <meta property="og:url" content="neksio.wtf">
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="fontawesome.css">
+    <script src='fontawesome.js'></script>
     <script async src='/cdn-cgi/challenge-platform/h/g/scripts/invisible.js?ts=1647183600'></script>
 </head>
 
@@ -23,39 +25,100 @@
                 audio.volume = 0.1;
                 audio.play()
             }
-            function videoPlay() {
-                var video = document.getElementById("video");
-                video.volume = 0;
-                video.play()
-            }
         </script>
         <input type="checkbox" autocomplete="off" id="overlay-toggle">
         <input type="checkbox" autocomplete="off" id="overlay-toggle">
         <div class="overlay fullscreen">
-            <label for="overlay-toggle" onclick="audioPlay();videoPlay()">
-                <span class="no-hover" style="font-family:  'Roboto Mono', monospace; font-size: 0.6em;">tap to enter</span>
-                <span class="hover" style="font-family:  'Roboto Mono', monospace; font-size: 0.6em;">click to enter</span>
+            <label for="overlay-toggle" onclick="audioPlay()">
+                <span class="no-hover" style="font-size: 0.6em;">tap to enter</span>
+                <span class="hover" style="font-size: 0.6em;">click to enter</span>
             </label>
         </div>
+        <div class="bg"></div>
         <audio loop="" preload="auto" id="audio">
-            <source src="https://kurwa.club/neksio.mp4" type="audio/mp3">
-            <!--thanks hipis daddy for uploading the big ass video-->
+            <source src="bg.mp4" type="audio/mp3">
         </audio>
-        <video loop="" playsinline="" preload="auto" class="fullscreen bg-video" id="video">
-            <source src="https://kurwa.club/neksio.mp4" type="video/mp4">
-        </video>
         <section class="fullscreen text-content">
-            <h1 style="font-family: derk; text-shadow: 0 0 0.40em #bababa;">neksio</h1>
+            <h1 style="font-family: n1; text-shadow: 0 0 0.40em #bababa;">neksio <span class="smaller">/'neksɪəʊ/ noun.</span></h1>
             <div class="socials">
-                <a href="https://t.me/neksioo" target="_blank"
-                    style="text-decoration:none; font-family:  'Roboto Mono', monospace; font-size: 1.1em; text-shadow: 0 0 0.40em #bababa;">telegram</a>
-                <a href="https://discord.com/users/987337901182418954" target="_blank"
-                    style="text-decoration:none; font-family:  'Roboto Mono', monospace; font-size: 1.1em; text-shadow: 0 0 0.40em #bababa;">discord</a>
-                <a href="https://steamcommunity.com/id/ecud" target="_blank"
-                    style="text-decoration:none; font-family:  'Roboto Mono', monospace; font-size: 1.1em; text-shadow: 0 0 0.40em #bababa;">steam</a>
+                <a class="hoverr" href="https://t.me/neksioo" target="_blank">telegram</a>
+                <a class="hoverr" href="https://steamcommunity.com/id/ecud" target="_blank">steam</a>
             </div>
     </main>
+    <p class="copyrightNote">© 2023 neksio</p>
+<script>
+    class TextScramble {
+    constructor(el) {
+        this.el = el;
+        this.chars = '!<>-_\\/[]{}—=+*^?#________';
+        this.update = this.update.bind(this);
+    }
+    setText(newText) {
+        const oldText = this.el.innerText;
+        const length = Math.max(oldText.length, newText.length);
+        const promise = new Promise(resolve => this.resolve = resolve);
+        this.queue = [];
+        for (let i = 0; i < length; i++) {
+            const from = oldText[i] || '';
+            const to = newText[i] || '';
+            const start = Math.floor(Math.random() * 40);
+            const end = start + Math.floor(Math.random() * 40);
+            this.queue.push({ from, to, start, end });
+        }
+        cancelAnimationFrame(this.frameRequest);
+        this.frame = 0;
+        this.update();
+        return promise;
+    }
+    update() {
+        let output = '';
+        let complete = 0;
+        for (let i = 0, n = this.queue.length; i < n; i++) {
+            let { from, to, start, end, char } = this.queue[i];
+            if (this.frame >= end) {
+                complete++;
+                output += to;
+            } else if (this.frame >= start) {
+                if (!char || Math.random() < 0.28) {
+                    char = this.randomChar();
+                    this.queue[i].char = char;
+                }
+                output += `<span class="dud">${char}</span>`;
+            } else {
+                output += from;
+            }
+        }
+        this.el.innerHTML = output;
+        if (complete === this.queue.length) {
+            this.resolve();
+        } else {
+            this.frameRequest = requestAnimationFrame(this.update);
+            this.frame++;
+        }
+    }
+    randomChar() {
+        return this.chars[Math.floor(Math.random() * this.chars.length)];
+    }
+}
 
+const phrases = [
+    '© 2023 neksio'
+];
+
+const el = document.querySelector('.copyrightNote');
+const fx = new TextScramble(el);
+
+let counter = 0;
+const next = () => {
+    fx.setText(phrases[counter]).then(() => {
+        setTimeout(next, 800);
+    });
+    counter = (counter + 1) % phrases.length;
+};
+
+next();
+</script>
 </body>
+
 
 </html>
