@@ -1,1 +1,1 @@
-# neksio.wtf
+jestem jebanym pedalem
